@@ -1,0 +1,49 @@
+.hero {
+    flex: 1;
+}
+
+.hero-header {
+    font-size: 4em;
+    font-weight: 900;
+    margin: 0 0 0.25em 0;
+}
+
+.hero-header__sub {
+    color: $light;
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0;
+}
+
+.hero-social {
+    font-size: 1.25em;
+    margin-top: 4em;
+
+    & > a {
+        &:not(:last-child) {
+            margin-right: 2em;
+        }
+    }
+
+    & i {
+        background: $light;
+        color: white;
+
+        height: 36px;
+        width: 36px;
+
+        transition: background, 0.25s;
+
+        &.fa-facebook-f:hover {
+            background: rgb(59, 89, 152);
+        }
+
+        &.fa-twitter:hover {
+            background: rgb(29, 161, 242);
+        }
+
+        &.fa-linkedin-in:hover {
+            background: rgb(0, 119, 181);
+        }
+    }
+}

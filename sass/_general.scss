@@ -23,3 +23,7 @@ a {
     margin: 0 auto;
     max-width: 1640px;
 }
+
+.site-wrapper {
+    height: calc(100% - 5px);
+}

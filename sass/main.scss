@@ -1,7 +1,10 @@
 @import '../node_modules/normalize.css/normalize';
-@import '_fonts';
-@import '_variables';
-@import '_utilities';
 
-@import '_general';
-@import '_nav';
+@import 'fonts';
+@import 'variables';
+@import 'utilities';
+
+@import 'general';
+@import 'nav';
+
+@import 'frontpage';

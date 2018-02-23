@@ -1,11 +1,30 @@
-.is-flex {
-    display: flex;
-    width: 100%;
+//
+//  FONT RELATED UTILITIES
+//
+$font-colors:   (   
+                    light: $light,
+                    dark: $dark
+                );
+@mixin font-color-options {
+    @each $label, $option in $font-colors {
+        .text-#{$label} { color: $option; }
+    }
 }
+@include font-color-options;
+
+//
+//  DISPLAY RELATED UTILITIES
+//
+
+$display-options: block, inline, inline-block, flex, inline-flex, table, grid;
+@mixin display-options {
+    @each $option in $display-options {
+        .is-#{$option} { display: $option; }
+    }
+}
+@include display-options;
 
 $jc-options: center, start, end, flex-start, flex-end, left, right, normal, space-between, space-around, space-evenly, stretch;
-$ai-options: normal, stretch, center, start, end, flex-start, flex-end, self-start, self-end, baseline, first baseline, last baseline, safe center, unsafe senter;
-
 @mixin justify-content-options {
     @each $option in $jc-options {
         .justify-content-#{$option} { justify-content: $option; }
@@ -13,9 +32,18 @@ $ai-options: normal, stretch, center, start, end, flex-start, flex-end, self-sta
 }
 @include justify-content-options;
 
+$ai-options: normal, stretch, center, start, end, flex-start, flex-end, self-start, self-end, baseline, first baseline, last baseline, safe center, unsafe senter;
 @mixin align-items-options {
     @each $option in $ai-options {
         .align-items-#{$option} { align-items: $option; }
     }
 }
 @include align-items-options;
+
+$fd-options: row, row-reverse, column, column-reverse;
+@mixin flex-direction-options {
+    @each $option in $fd-options {
+        .flex-#{$option} { flex-direction: $option; }
+    }
+}
+@include flex-direction-options;
