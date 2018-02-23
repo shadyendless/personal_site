@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    color: $dark;
+    font-family: $fira-sans;
+}
+
+body {
+    &:before {
+        background: linear-gradient(90deg, $light-blue, $dark-blue);
+        display: block;
+        height: 5px;
+        content: '';
+        width: 100%;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1640px;
+}

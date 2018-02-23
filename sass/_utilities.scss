@@ -1,0 +1,21 @@
+.is-flex {
+    display: flex;
+    width: 100%;
+}
+
+$jc-options: center, start, end, flex-start, flex-end, left, right, normal, space-between, space-around, space-evenly, stretch;
+$ai-options: normal, stretch, center, start, end, flex-start, flex-end, self-start, self-end, baseline, first baseline, last baseline, safe center, unsafe senter;
+
+@mixin justify-content-options {
+    @each $option in $jc-options {
+        .justify-content-#{$option} { justify-content: $option; }
+    }
+}
+@include justify-content-options;
+
+@mixin align-items-options {
+    @each $option in $ai-options {
+        .align-items-#{$option} { align-items: $option; }
+    }
+}
+@include align-items-options;
