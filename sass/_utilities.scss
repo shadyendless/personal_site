@@ -16,7 +16,7 @@ $font-colors:   (
 //  DISPLAY RELATED UTILITIES
 //
 
-$display-options: block, inline, inline-block, flex, inline-flex, table, grid, none, hidden;
+$display-options: block, inline, inline-block, flex, inline-flex, table, grid;
 @mixin display-options {
     @each $option in $display-options {
         .is-#{$option} { display: $option; }
@@ -63,15 +63,14 @@ $breakpoints:   (
                 display: initial;
             }
         }
-
-        @mixin hide-on-#{label} {
-            @media only screen and (min-width: $breakpoint) {
-                display: none;
-            }
-        }
     }
 }
 @include show-on-options;
+@mixin hide-on-medium {
+    @media only screen and (min-width: $med-bk) {
+        display: none;
+    }
+}
 
 @mixin hide-on-options {
     @each $label, $breakpoint in $breakpoints {

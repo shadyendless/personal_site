@@ -1,6 +1,6 @@
 .frontpage {
-    background: url(/images/bg_mountain.svg);
-    background-position: right 60vh;
+    background: url(../images/bg_mountain.svg);
+    background-position: center 60vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -71,6 +71,10 @@
 
         & i.fa-facebook-f {
             padding-left: 5px;
+        }
+
+        & i.fa-linkedin-in {
+            padding-left: 2px;
         }
     }
 }
