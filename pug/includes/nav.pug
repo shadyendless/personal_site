@@ -1,33 +1,16 @@
+block append vars
+    - var navigation = { 'about': '#', 'blog': '#', 'work': '#', 'resume': '#', 'contact': '#' }
+
 nav( class="nav" )
     div( class="is-flex justify-content-space-between align-items-center" )
         div( class="logo" )
             a( href="/" ) jacob foster
         
-        ul( class="nav-items hide-on-medium" )
-            li( class="nav-item" )
-                a( href="#" ) about
-            li( class="nav-item" )
-                a( href="#" ) blog
-            li( class="nav-item" )
-                a( href="#" ) work
-            li( class="nav-item" )
-                a( href="#" ) resume
-            li( class="nav-item" )
-                a( href="#" ) contact
+        +nav(navigation, false)
 
         div( id="mobile-toggle" class="hamburger" )
             div
             div
             div
-    
-    ul( class="nav-items__mobile is-none" )
-        li( class="nav-item__mobile" )
-            a( href="#" ) about
-        li( class="nav-item__mobile" )
-            a( href="#" ) blog
-        li( class="nav-item__mobile" )
-            a( href="#" ) work
-        li( class="nav-item__mobile" )
-            a( href="#" ) resume
-        li( class="nav-item__mobile" )
-            a( href="#" ) contact
+
+    +nav(navigation, true)

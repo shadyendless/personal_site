@@ -1,3 +1,9 @@
+mixin nav(items, isMobile)
+    ul( class=(isMobile ? "nav-items__mobile is-none" : "nav-items hide-on-medium") )
+        each link, title in items
+            li( class=("nav-item" + (isMobile ? "__mobile" : "")) )
+                a( href=link ) #{title}
+
 mixin social-button(url, brandClass, brandName)
     a( class="inline-block" href=url )
         i( class="fab " + brandClass + " is-inline-flex justify-content-center align-items-center" )
