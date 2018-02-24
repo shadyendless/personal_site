@@ -66,9 +66,10 @@ $breakpoints:   (
     }
 }
 @include show-on-options;
-@mixin hide-on-medium {
-    @media only screen and (min-width: $med-bk) {
-        display: none;
+@mixin show-on($label) {
+    display: none;
+    @media only screen and (max-width: map-get($breakpoints, $label)) {
+        display: initial;
     }
 }
 
@@ -82,3 +83,8 @@ $breakpoints:   (
     }
 }
 @include hide-on-options;
+@mixin hide-on($label) {
+    @media only screen and (min-width: map-get($breakpoints, $label)) {
+        display: none;
+    }
+}

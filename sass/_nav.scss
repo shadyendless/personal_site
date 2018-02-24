@@ -23,7 +23,7 @@
 }
 
 .hamburger {
-    @include hide-on-medium;
+    @include hide-on(medium);
 
     cursor: pointer;
 
