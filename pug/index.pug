@@ -1,0 +1,23 @@
+extends layouts/layout.pug
+
+block vars
+    - var bodyClass = 'frontpage'
+
+block content
+    div( class="hero is-flex justify-content-center align-items-start flex-column" )
+        h1( class="hero-header" ) Hello
+        h2( class="hero-header__sub" )
+            | I am a designer and developer located in the Pacific Northwest.
+        div( class="hero-social" )
+            a( class="inline-block" href="https://www.facebook.com/jacob.foster.58" )
+                i( class="fab fa-facebook-f is-inline-flex justify-content-center align-items-center" )
+                span( class="hide-on-medium" )
+                    |&nbsp;&nbsp;&nbsp;facebook
+            a( class="inline-block" href="https://www.twitter.com/im_jacobf" )
+                i( class="fab fa-twitter is-inline-flex justify-content-center align-items-center" )
+                span( class="hide-on-medium" )
+                    |&nbsp;&nbsp;&nbsp;twitter
+            a( class="inline-block" href="https://www.linkedin.com/in/imjacobf/" )
+                i( class="fab fa-linkedin-in is-inline-flex justify-content-center align-items-center" )
+                span( class="hide-on-medium" )
+                    |&nbsp;&nbsp;&nbsp;linkedin
