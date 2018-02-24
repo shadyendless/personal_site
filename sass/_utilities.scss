@@ -16,7 +16,7 @@ $font-colors:   (
 //  DISPLAY RELATED UTILITIES
 //
 
-$display-options: block, inline, inline-block, flex, inline-flex, table, grid;
+$display-options: block, inline, inline-block, flex, inline-flex, table, grid, hidden, none;
 @mixin display-options {
     @each $option in $display-options {
         .is-#{$option} { display: $option; }

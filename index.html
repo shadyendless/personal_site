@@ -11,32 +11,51 @@
 
 <body class="frontpage">
     <div class="container site-wrapper is-flex flex-column">
-        <nav class="nav is-flex justify-content-space-between align-items-center">
-            <div class="logo">
-                <a href="/">jacob foster</a>
+        <nav class="nav">
+            <div class="is-flex justify-content-space-between align-items-center">
+                <div class="logo">
+                    <a href="/">jacob foster</a>
+                </div>
+                <ul class="nav-items hide-on-medium">
+                    <li class="nav-item">
+                        <a href="#">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+                <div id="mobile-toggle" class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
-            <ul class="nav-items hide-on-medium">
-                <li class="nav-item">
+            <ul class="nav-items__mobile is-none">
+                <li class="nav-item__mobile">
                     <a href="#">about</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item__mobile">
                     <a href="#">blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item__mobile">
                     <a href="#">work</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item__mobile">
                     <a href="#">resume</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item__mobile">
                     <a href="#">contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </nav>
         <div class="hero is-flex justify-content-center align-items-start flex-column">
             <h1 class="hero-header">Hello</h1>
@@ -57,6 +76,8 @@
             </div>
         </div>
     </div>
+
+    <script src="dist/main.js"></script>
 </body>
 
 </html>

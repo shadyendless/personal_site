@@ -10,6 +10,15 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    &__mobile {
+        list-style-type: none;
+        text-align: center;
+
+        &:not(.is-none) {
+            @include show-on(medium);
+        }
+    }
 }
 
 .nav-item {
@@ -19,6 +28,21 @@
 
     &:not(:last-child) {
         margin-right: 2em;
+    }
+
+    &__mobile {
+        color: $light;
+        display: block;
+        font-size: 1.25em;
+        transition: all 0.25s;
+
+        &:hover {
+            color: $dark;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
     }
 }
 
@@ -35,6 +59,12 @@
     height: 1em;
     width: 1.5em;
 
+    &:hover {
+        & > div {
+            background: $dark;
+        }
+    }
+
     & > div {
         background: $light;
 
@@ -44,9 +74,15 @@
         transition: all 0.25s;
     }
 
-    &:hover {
-        & > div {
-            background: $dark;
+    &.open {
+        & > div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        & > div:nth-child(2) {
+            transform: scaleX(0);
+        }
+        & > div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
     }
 }
