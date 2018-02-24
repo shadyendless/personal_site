@@ -16,7 +16,7 @@ $font-colors:   (
 //  DISPLAY RELATED UTILITIES
 //
 
-$display-options: block, inline, inline-block, flex, inline-flex, table, grid;
+$display-options: block, inline, inline-block, flex, inline-flex, table, grid, none, hidden;
 @mixin display-options {
     @each $option in $display-options {
         .is-#{$option} { display: $option; }
@@ -47,3 +47,39 @@ $fd-options: row, row-reverse, column, column-reverse;
     }
 }
 @include flex-direction-options;
+
+
+//
+//  DISPLAY RELATED RESPONSIVE UTILITIES
+//
+$breakpoints:   (   
+                    medium: $med-bk
+                );
+@mixin show-on-options {
+    @each $label, $breakpoint in $breakpoints {
+        .show-on-#{$label} {
+            display: none;
+            @media only screen and (max-width: $breakpoint) {
+                display: initial;
+            }
+        }
+
+        @mixin hide-on-#{label} {
+            @media only screen and (min-width: $breakpoint) {
+                display: none;
+            }
+        }
+    }
+}
+@include show-on-options;
+
+@mixin hide-on-options {
+    @each $label, $breakpoint in $breakpoints {
+        .hide-on-#{$label} {
+            @media only screen and (max-width: $breakpoint) {
+                display: none;
+            }
+        }
+    }
+}
+@include hide-on-options;

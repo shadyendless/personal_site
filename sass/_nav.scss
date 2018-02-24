@@ -7,7 +7,6 @@
 }
 
 .nav-items {
-    display: block;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -20,5 +19,34 @@
 
     &:not(:last-child) {
         margin-right: 2em;
+    }
+}
+
+.hamburger {
+    @include hide-on-medium;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 1em;
+    width: 1.5em;
+
+    & > div {
+        background: $light;
+
+        height: 2px;
+        width: 100%;
+
+        transition: all 0.25s;
+    }
+
+    &:hover {
+        & > div {
+            background: $dark;
+        }
     }
 }
