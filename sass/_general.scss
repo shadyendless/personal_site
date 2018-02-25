@@ -3,6 +3,11 @@
     font-family: $fira-sans;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     &:before {
         background: linear-gradient(90deg, $light-blue, $dark-blue);
