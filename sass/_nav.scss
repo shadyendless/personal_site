@@ -54,17 +54,17 @@
 }
 
 .hamburger {
-    @include hide-on(medium);
-
     cursor: pointer;
-
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-
     height: 1em;
     width: 1.5em;
+
+    @include on-mq(medium) {
+        display: flex;
+    }
 
     &:hover {
         & > div {
