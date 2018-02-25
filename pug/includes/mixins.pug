@@ -1,7 +1,7 @@
-mixin nav(items, isMobile)
+mixin nav(items, isMobile, activePage)
     ul( class=(isMobile ? "nav-items__mobile is-none" : "nav-items hide-on-medium") )
         each link, title in items
-            li( class=("nav-item" + (isMobile ? "__mobile" : "")) )
+            li( class=("nav-item" + (isMobile ? "__mobile" : "") + (activePage == title ? " active" : "")) )
                 a( href=link ) #{title}
 
 mixin social-button(url, brandClass, brandName)

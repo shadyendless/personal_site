@@ -1,16 +1,16 @@
 block append vars
-    - var navigation = { 'about': '#', 'blog': '#', 'work': '#', 'resume': '#', 'contact': '#' }
+    - var navigation = { 'about': 'about.html', 'blog': '#', 'work': '#', 'resume': '#', 'contact': '#' }
 
 nav( class="nav" )
     div( class="is-flex justify-content-space-between align-items-center" )
         div( class="logo" )
-            a( href="/" ) jacob foster
+            a( href="" ) jacob foster
         
-        +nav(navigation, false)
+        +nav(navigation, false, activePage)
 
         div( id="mobile-toggle" class="hamburger" )
             div
             div
             div
 
-    +nav(navigation, true)
+    +nav(navigation, true, activePage)
