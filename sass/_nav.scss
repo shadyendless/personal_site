@@ -1,5 +1,9 @@
 .nav {
     padding: 1em 0;
+
+    @include on-mq(small) {
+        padding: 1em 2em;
+    }
 }
 
 .logo {

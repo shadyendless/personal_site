@@ -26,6 +26,10 @@ a {
 .container {
     margin: 0 auto;
     max-width: 80%;
+
+    @include on-mq(small) {
+        max-width: 95%;
+    }
 }
 
 .site-wrapper {

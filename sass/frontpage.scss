@@ -9,6 +9,16 @@
 .hero {
     flex: 1;
     padding-bottom: 10em;
+
+    @include on-mq(xsmall) {
+        font-size: 0.50em;
+        padding: 0 2em;
+    }
+
+    @include on-mq(small) {
+        font-size: 0.75em;
+        padding: 0 2em;
+    }
 }
 
 .hero-header {
@@ -69,7 +79,7 @@
         }
     }
 
-    @media only screen and (max-width: $med-bk) {
+    @include on-mq(medium) {
         & > a {
             width: 50px;
         }
@@ -80,6 +90,18 @@
 
         & i.fa-linkedin-in {
             padding-left: 2px;
+        }
+    }
+
+    @include on-mq(small) {
+        & > a {
+            text-align: center;
+            padding: 10px 10px;
+            width: 35px;
+        }
+
+        & i {
+            padding: 0;
         }
     }
 }

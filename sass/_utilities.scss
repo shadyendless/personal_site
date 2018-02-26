@@ -53,7 +53,9 @@ $fd-options: row, row-reverse, column, column-reverse;
 //  DISPLAY RELATED RESPONSIVE UTILITIES
 //
 $breakpoints:   (   
-                    medium: $med-bk,
+                    xsmall: $xs-bk,
+                    small: $sm-bk,
+                    medium: $md-bk,
                     large: $lg-bk
                 );
 @mixin show-on-options {
