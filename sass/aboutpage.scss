@@ -48,29 +48,28 @@
     grid-row: 2;
 
     border-radius: 50%;
-    margin-top: 4px;
+    margin: 0 auto;
+
+    width: 250px;
+    height: 250px;
 
     @include on-mq(medium) {
         grid-column: 1;
         grid-row: 1;
-
-        margin: 1em auto 0 auto;
     }
 
-    @include on-mq(small) {
-        width: 50%;
+    @include on-mq(xsmall) {
+        height: 125px;
+        width: 125px;
     }
 
     @include on-mq-h(small) {
         grid-column: 1;
         grid-row: 1;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         margin: 0;
-        width: 100%;
+        height: 125px;
+        width: 125px;
     }
 }
 
