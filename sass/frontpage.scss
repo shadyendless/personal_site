@@ -19,6 +19,12 @@
         font-size: 0.75em;
         padding: 0 2em;
     }
+
+    @include on-mq-h(small) {
+        font-size: 0.75em;
+        padding-bottom: 0;
+        padding-top: 2em;
+    }
 }
 
 .hero-header {
@@ -103,5 +109,9 @@
         & i {
             padding: 0;
         }
+    }
+
+    @include on-mq-h(small) {
+        margin-top: 2em;
     }
 }
