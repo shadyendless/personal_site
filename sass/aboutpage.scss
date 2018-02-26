@@ -5,7 +5,7 @@
     margin-bottom: 2em;
 
     @include on-mq(medium) {
-        grid-template-columns: 12fr;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -54,6 +54,7 @@
 
     &__para {
         color: $light;
+        font-family: $montserrat;
         line-height: 1.5;
 
         &:first-child {
