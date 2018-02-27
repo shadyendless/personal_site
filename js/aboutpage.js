@@ -13,7 +13,7 @@
             tocMap[tocLink.dataset.scrollTo] = tocLink;
             return tocMap;
         }, {});
-    const tocContainer = document.getElementById('about-left__toc');
+    const tocContainers = document.querySelectorAll('.about-left__toc');
     let activeLink = document.querySelector('.about-left__link.active');
 
     tocLinks.forEach(link => {
@@ -31,9 +31,9 @@
             const intersectionEntry = entries[0];
             // If we are intersecting then we are on the page.
             if (intersectionEntry.isIntersecting) {
-                tocContainer.classList.remove('fixed');
+                tocContainers.forEach(container => container.classList.remove('fixed'));
             } else {
-                tocContainer.classList.add('fixed');
+                tocContainers.forEach(container => container.classList.add('fixed'));
             }
         });
         tocObserver.observe(document.querySelector('.about-image'));
