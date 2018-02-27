@@ -217,6 +217,10 @@
         &:first-child {
             margin-top: 0;
         }
+
+        & span {
+            font-family: inherit;
+        }
     }
     
     @include on-mq(large) {

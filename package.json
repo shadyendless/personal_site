@@ -9,6 +9,11 @@
   "author": "Jacob Foster",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "moment": "^2.20.1",
+    "normalize.css": "^8.0.0",
+    "zenscroll": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
   }
 }
