@@ -48,17 +48,12 @@
     width: 100%;
 
     & > a {
+        @include raising-box;
+
         background: white;
-        box-shadow: 0 3px 10px rgba($dark, 0.1);
         border-radius: 2px;
         padding: 10px 15px;
-        transition: all 0.25s;
         width: 150px;
-
-        &:hover {
-            box-shadow: 0 3px 10px rgba($dark, 0.15);
-            transform: translateY(-1px);
-        }
 
         &:not(:last-child) {
             margin-right: 2em;

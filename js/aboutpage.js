@@ -22,12 +22,15 @@
             activeLink.classList.remove('active');
             link.classList.toggle('active');
             activeLink = link;
-            zenscroll.center(headerMap[event.target.dataset.scrollTo], 999, 250);
+            zenscroll.center(headerMap[event.target.dataset.scrollTo], 999, (isLandscape() ? 50 : 250));
         });
     });
 
     (function configureTOCObserver() {
         const tocObserver = new IntersectionObserver((entries, observer) => {
+            // If this is a landscape phone, then we won't add fixed.
+            if (isLandscape() || isPortrait()) return;
+
             const intersectionEntry = entries[0];
             // If we are intersecting then we are on the page.
             if (intersectionEntry.isIntersecting) {
@@ -47,7 +50,7 @@
                 }
             });
         }, {
-                rootMargin: '0% 0% -75% 0%'
+                rootMargin: '0% 0% -60% 0%'
             });
         headers.forEach(header => headerObserver.observe(header));
     }());

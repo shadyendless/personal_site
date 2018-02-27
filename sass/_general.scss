@@ -45,10 +45,25 @@ a {
     height: calc(100% - 5px);
 }
 
-.footer {
-    color: white;
-    font-size: 0.8em;
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
+#to-top {
+    @include raising-box;
+    background: white;
+    border-radius: 2px;
+    color: $light-blue;
+    display: none;
+
+    height: 40px;
+    width: 40px;
+
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    
+    @include on-mq(medium) {
+        display: flex;
+    }
+    
+    @include on-mq-h(small) {
+        display: flex;
+    }
 }

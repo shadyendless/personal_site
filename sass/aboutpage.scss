@@ -10,9 +10,8 @@
     }
 
     @include on-mq-h(small) {
-        grid-template-columns: 1fr 5fr;
-        grid-column-gap: 2em;
-        grid-row-gap: 1em;
+        display: flex;
+        flex-direction: column;
 
         padding-top: 1em;
     }
@@ -38,8 +37,10 @@
         grid-column: 1 / 3;
 
         display: flex;
-        justify-content: flex-start;
         align-items: center;
+        justify-content: flex-start;
+
+        margin-bottom: 1em;
 
         &:not(:first-of-type) {
             grid-column: 1 / 3;
@@ -47,37 +48,32 @@
     }
 }
 
-.about-left__toc.toc-mobile-fix {
-    display: none;
-
-    @include on-mq(medium) {
-        &.fixed {
-            display: block;
-            position: relative;
-        }
-    }
-}
-
-.about-left__toc.fixed {
-    position: fixed;
-    top: 0;
-
-    & > .about-left__header {
-        margin-left: 5.25em;
+.about-left__toc {
+    @include on-mq-h(small) {
+        flex: 1;
     }
 
-    @include on-mq(medium) {
-        background: white;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: initial;
-        text-align: center;
-        padding: 1em;
+    &.fixed {
+        position: fixed;
+        top: 0;
 
         & > .about-left__header {
-            margin-left: 0;
-            margin-top: 1em;
+            margin-left: 5.25em;
+        }
+
+        @include on-mq(medium) {
+            background: white;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: initial;
+            text-align: center;
+            padding: 1em;
+
+            & > .about-left__header {
+                margin-left: 0;
+                margin-top: 1em;
+            }
         }
     }
 }
@@ -89,6 +85,11 @@
     @include on-mq(medium) {
         text-align: center;
         margin-bottom: 1em;
+    }
+
+    @include on-mq-h(small) {
+        display: flex;
+        min-height: 125px;
     }
 
     &__header {
@@ -104,8 +105,7 @@
         }
     }
 
-    &__links,
-    &__links_mobile_fix {
+    &__links {
         display: flex;
         flex-direction: column;
 
@@ -116,10 +116,15 @@
             justify-content: space-between;
             padding: 0 1em;
         }
+
+        @include on-mq-h(small) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 3em;
+        }
     }
 
-    &__link,
-    &__link_mobile_fix {
+    &__link {
         border-left: 3px solid white;
         color: $light;
         font-size: 1em;
@@ -139,6 +144,21 @@
             border-left: 0;
             border-bottom: 3px solid white;
             flex: 1;
+            padding-left: 0;
+            padding-bottom: 0.25em;
+            &:hover {
+                border-left: 0;
+                border-bottom: 3px solid $light;
+            }
+            &.active {
+                border-left: 0;
+                border-bottom: 3px solid $light-blue;
+            }
+        }
+
+        @include on-mq-h(small) {
+            border-left: 0;
+            border-bottom: 3px solid white;
             padding-left: 0;
             padding-bottom: 0.25em;
             &:hover {
@@ -176,7 +196,7 @@
     grid-column: 3 / 4;
 
     background: white;
-    box-shadow: 0 3px 10px rgba($dark, 0.1);
+    box-shadow: $box-normal;
     border-radius: 2px;
     text-align: justify;
     padding: 3em 4em;

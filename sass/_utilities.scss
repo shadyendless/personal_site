@@ -102,3 +102,16 @@ $breakpoints:   (
         @content;
     }
 }
+
+//
+//  OTHER UTILITIES
+//
+@mixin raising-box {
+    box-shadow: 0 3px 10px rgba($dark, 0.1);
+    transition: all 0.25s;
+
+    &:hover {
+        box-shadow: 0 3px 10px rgba($dark, 0.15);
+        transform: translateY(-1px);
+    }
+}
