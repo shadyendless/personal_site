@@ -22,7 +22,7 @@
             activeLink.classList.remove('active');
             link.classList.toggle('active');
             activeLink = link;
-            zenscroll.to(headerMap[event.target.dataset.scrollTo]);
+            zenscroll.center(headerMap[event.target.dataset.scrollTo], 999, 250);
         });
     });
 
