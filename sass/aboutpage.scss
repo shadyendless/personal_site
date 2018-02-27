@@ -218,7 +218,9 @@
             margin-top: 0;
         }
 
-        & span {
+        & span,
+        & em,
+        & strong {
             font-family: inherit;
         }
     }
