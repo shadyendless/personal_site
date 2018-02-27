@@ -8,6 +8,7 @@
 
             hamburgerIcon.classList.toggle('open');
             mobileMenu.classList.toggle('is-none');
+            document.body.classList.toggle('noscroll');
         });
 
         document.querySelector('.copyright-year').innerHTML = (new Date()).getFullYear();

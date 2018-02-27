@@ -16,9 +16,18 @@
     padding: 0;
 
     &__mobile {
+        background: rgba(255, 255, 255, 0.95);
+        bottom: 0;
+        left: 0;
         list-style: none;
+        margin: 0;
+        padding: 2em 0 0 0;
+        position: absolute;
+        right: 0;
         text-align: center;
-
+        top: 55px;
+        width: 100%;
+        
         &:not(.is-none) {
             @include show-on(medium);
         }

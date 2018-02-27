@@ -6,9 +6,14 @@
 html,
 body {
     height: 100%;
+    position: relative;
 }
 
 body {
+    &.noscroll {
+        overflow: hidden;
+    }
+    
     &:before {
         background: linear-gradient(90deg, $light-blue, $dark-blue);
         display: block;
