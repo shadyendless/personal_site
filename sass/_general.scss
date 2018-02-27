@@ -25,6 +25,14 @@ body {
         content: '';
         width: 100%;
     }
+
+    @include above-mq(xlarge) {
+        font-size: 1.5em;
+    }
+
+    @include above-mq(xxlarge) {
+        font-size: 1.75em;
+    }
 }
 
 a {

@@ -4,6 +4,10 @@
 
     margin-bottom: 2em;
 
+    @include above-mq(xlarge) {
+        grid-template-columns: 1fr 1fr 9fr 1fr;
+    }
+
     @include on-mq(medium) {
         display: flex;
         flex-direction: column;

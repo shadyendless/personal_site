@@ -52,7 +52,7 @@
 
         background: white;
         border-radius: 2px;
-        padding: 10px 15px;
+        padding: 0.5em 1em;
         width: 150px;
 
         &:not(:last-child) {
@@ -80,6 +80,18 @@
         }
     }
 
+    @include above-mq(xlarge) {
+        & > a {
+            width: 225px;
+        }
+    }
+
+    @include above-mq(xxlarge) {
+        & > a {
+            width: 275px;
+        }
+    }
+
     @include on-mq(medium) {
         & > a {
             width: 50px;
@@ -97,8 +109,8 @@
     @include on-mq(small) {
         & > a {
             text-align: center;
-            padding: 10px 10px;
-            width: 35px;
+            padding: 0.75em 1em;
+            width: 50px;
         }
 
         & i {
@@ -108,5 +120,11 @@
 
     @include on-mq-h(small) {
         margin-top: 2em;
+
+        & > a {
+            text-align: center;
+            padding: 0.75em 1em;
+            width: 125px;
+        }
     }
 }
