@@ -50,9 +50,11 @@
 .about-left__toc.toc-mobile-fix {
     display: none;
 
-    &.fixed {
-        display: block;
-        position: relative;
+    @include on-mq(medium) {
+        &.fixed {
+            display: block;
+            position: relative;
+        }
     }
 }
 
