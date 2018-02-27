@@ -5,7 +5,8 @@
     margin-bottom: 2em;
 
     @include on-mq(medium) {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     @include on-mq-h(small) {
@@ -18,11 +19,11 @@
 }
 
 .about-header {
-    font-size: 2.25em;
+    font-size: 1.5em;
     font-weight: 800;
+    letter-spacing: 1px;
 
     grid-column: 3;
-    grid-row: 1;
     margin-top: 1em;
 
     @include on-mq(medium) {
@@ -34,29 +35,75 @@
     }
 
     @include on-mq-h(small) {
-        grid-column: 2;
-        grid-row: 1;
+        grid-column: 1 / 3;
 
         display: flex;
         justify-content: flex-start;
         align-items: center;
+
+        &:not(:first-of-type) {
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+#about-left__toc.fixed {
+    position: fixed;
+    top: 0;
+
+    & > .about-left__header {
+        margin-left: 5.25em;
+    }
+}
+
+.about-left {
+    grid-column: 1;
+    grid-row: 2 / 5;
+
+    &__header {
+        color: $light;
+        font-size: 0.75em;
+        letter-spacing: 1px;
+        margin: 3em 0 2em 0;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:before {
+            content: 'Table of Contents';
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 2em;
+    }
+
+    &__link {
+        border-left: 3px solid white;
+        color: $light;
+        font-size: 1em;
+        margin-bottom: 0.5em;
+        padding-left: 0.75em;
+        transition: all 0.25s;
+
+        &:hover {
+            border-left: 3px solid $light;
+        }
+        &.active {
+            border-left: 3px solid $light-blue;
+            color: $dark;
+        }
     }
 }
 
 .about-image {
-    grid-column: 1;
-    grid-row: 2;
-
     border-radius: 50%;
     margin: 0 auto;
 
     width: 250px;
     height: 250px;
-
-    @include on-mq(medium) {
-        grid-column: 1;
-        grid-row: 1;
-    }
 
     @include on-mq(xsmall) {
         height: 125px;
@@ -64,9 +111,6 @@
     }
 
     @include on-mq-h(small) {
-        grid-column: 1;
-        grid-row: 1;
-
         margin: 0;
         height: 125px;
         width: 125px;
@@ -75,13 +119,16 @@
 
 .about-text {
     grid-column: 3 / 4;
-    grid-row: 2;
 
     background: white;
     box-shadow: 0 3px 10px rgba($dark, 0.1);
     border-radius: 2px;
     text-align: justify;
     padding: 3em 4em;
+
+    &:not(:only-of-type) {
+        margin-bottom: 2em;
+    }
 
     &__para {
         color: $light;
@@ -107,7 +154,6 @@
     }
 
     @include on-mq-h(small) {
-        grid-column: 1 / 3;
-        grid-row: 2;
+        grid-column: 1 / 4;
     }
 }

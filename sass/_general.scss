@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+body, .smoothscroll {
+    scroll-behavior: smooth;
+}
+
 body {
     &.noscroll {
         overflow: hidden;
