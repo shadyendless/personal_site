@@ -1,5 +1,5 @@
 (function () {
-    if (!window.location.pathname.includes('/about.html')) return;
+    if (!window.location.pathname.includes('/about')) return;
     const myAge = document.getElementById('my-age');
     if (myAge !== undefined) {
         myAge.innerHTML = moment().diff(moment('07-05-1991', 'MM-DD-YYYY'), 'years');

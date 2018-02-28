@@ -12,7 +12,7 @@
             document.body.classList.toggle('noscroll');
         });
 
-        if (scrollToTop !== undefined) {
+        if (scrollToTop !== undefined && scrollToTop !== null) {
             scrollToTop.addEventListener('click', (event) => {
                 event.preventDefault();
                 zenscroll.toY(0);
