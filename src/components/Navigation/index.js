@@ -50,11 +50,11 @@ class Navigation extends Component {
     renderHamburger() {
         const navExpanded = this.state.navExpanded;
         return (
-            <div id="mobile-toggle" className={`hamburger ${navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
-                <div />
-                <div />
-                <div />
-            </div>
+            <button id="mobile-toggle" className={`hamburger ${navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         );
     }
 
