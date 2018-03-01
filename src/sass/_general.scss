@@ -20,14 +20,6 @@ body {
         overflow: hidden;
     }
 
-    &:before {
-        background: linear-gradient(90deg, $light-blue, $dark-blue);
-        display: block;
-        height: 5px;
-        content: '';
-        width: 100%;
-    }
-
     @include above-mq(xlarge) {
         font-size: 1.5em;
     }
@@ -76,4 +68,12 @@ a {
     @include on-mq-h(small) {
         display: flex;
     }
+}
+
+.top-color-bar {
+    background: linear-gradient(90deg, $light-blue, $dark-blue);
+    display: block;
+    height: 5px;
+    content: '';
+    width: 100%;
 }

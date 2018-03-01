@@ -1,5 +1,6 @@
 .frontpage::before {
     background: url(../images/bg_mountain.svg);
+    content: '';
     height: 100%;
     width: 100%;
     position: fixed;
