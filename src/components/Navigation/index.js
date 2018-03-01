@@ -52,7 +52,7 @@ class Navigation extends Component {
                     <ul className={`nav-items__mobile ${this.state.navExpanded ? '' : 'is-none'}`}>
                         {links.map(({ url, link }) => (
                             <li key={`${link}-mobile`} className="nav-item__mobile">
-                                <Link to={url} activeClassName="active">
+                                <Link to={url} activeClassName="active" onClick={this.toggleMenu}>
                                     {link}
                                 </Link>
                             </li>
