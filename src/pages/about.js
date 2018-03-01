@@ -1,9 +1,12 @@
 import React from 'react';
+import me from '../images/me.jpg';
+import me2x from '../images/me@2x.jpg';
+import me3x from '../images/me@3x.jpg';
 
 const AboutPage = () => (
     <div className="aboutpage">
         <div className="about-left">
-            <img className="about-image" src="images/me.jpg" srcset="images/me@2x.jpg 2x, images/me@3x.jpg 3x" />
+            <img className="about-image" src={me} srcSet={`${me2x} 2x, ${me3x} 3x`} />
             <div className="about-left__toc">
                 <h1 className="about-left__header" />
                 <div className="about-left__links">

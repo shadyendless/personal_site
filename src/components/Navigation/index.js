@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 import Link from 'gatsby-link';
 
+const links = [
+    { url: '/about', link: 'about' },
+    { url: '/blog', link: 'blog' },
+    { url: '/work', link: 'work' },
+    { url: '/resume', link: 'resume' },
+    { url: '/contact', link: 'contact' }
+];
+
 class Navigation extends Component {
     constructor(props) {
         super(props);
@@ -27,44 +35,28 @@ class Navigation extends Component {
                             <Link to="/">jacob foster</Link>
                         </div>
                         <ul className="nav-items hide-on-medium">
-                            <li className="nav-item">
-                                <Link to="/about">about</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/blog">blog</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/work">work</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/resume">resume</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/contact">contact</Link>
-                            </li>
+                            {links.map(({ url, link }) => (
+                                <li key={link} className="nav-item">
+                                    <Link to={url} activeClassName="active">
+                                        {link}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
-                        <div className={`hamburger ${this.state.navExpanded ? 'open' : ''}`} id="mobile-toggle" onClick={this.toggleMenu}>
+                        <div id="mobile-toggle" className={`hamburger ${this.state.navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
                             <div />
                             <div />
                             <div />
                         </div>
                     </div>
                     <ul className={`nav-items__mobile ${this.state.navExpanded ? '' : 'is-none'}`}>
-                        <li className="nav-item__mobile">
-                            <a href="about">about</a>
-                        </li>
-                        <li className="nav-item__mobile">
-                            <a href="#">blog</a>
-                        </li>
-                        <li className="nav-item__mobile">
-                            <a href="#">work</a>
-                        </li>
-                        <li className="nav-item__mobile">
-                            <a href="#">resume</a>
-                        </li>
-                        <li className="nav-item__mobile">
-                            <a href="#">contact</a>
-                        </li>
+                        {links.map(({ url, link }) => (
+                            <li key={`${link}-mobile`} className="nav-item__mobile">
+                                <Link to={url} activeClassName="active">
+                                    {link}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </BodyClassName>
