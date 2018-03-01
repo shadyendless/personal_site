@@ -8,33 +8,26 @@ import me2x from '../../images/me@2x.jpg';
 import me3x from '../../images/me@3x.jpg';
 
 class AboutLeft extends Component {
-    constructor(props) {
-        super(props);
+    state = {
+        fixedTOC: false
+    };
 
-        this.state = {
-            fixedTOC: false
-        };
-
-        this.handleTocObserver = this.handleTocObserver.bind(this);
-        this.scrollTo = this.scrollTo.bind(this);
-    }
-
-    scrollTo(event) {
+    scrollTo = (event) => {
         event.preventDefault();
         const slug = event.target.dataset.scrollTo;
         const headerId = event.target.dataset.headerId;
 
         zenscroll.center(document.getElementById(slug), 999, isLandscape() ? 50 : 250);
         this.props.setActiveHeaderId(+headerId);
-    }
+    };
 
-    handleTocObserver(inView) {
+    handleTocObserver = (inView) => {
         if (isLandscape() || isPortrait()) return;
 
         this.setState(() => ({
             fixedTOC: !inView
         }));
-    }
+    };
 
     render() {
         const activeHeaderId = this.props.activeHeaderId;

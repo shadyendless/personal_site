@@ -3,27 +3,19 @@ import React, { Component, Fragment } from 'react';
 import Observer from 'react-intersection-observer';
 
 class AboutPage extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props.data);
+    state = {
+        activeHeaderId: 1
+    };
 
-        this.state = {
-            activeHeaderId: 1
-        };
-
-        this.setActiveHeaderId = this.setActiveHeaderId.bind(this);
-        this.handleHeaderObserver = this.handleHeaderObserver.bind(this);
-    }
-
-    setActiveHeaderId(headerId) {
+    setActiveHeaderId = (headerId) => {
         this.setState(() => ({
             activeHeaderId: headerId
         }));
-    }
+    };
 
-    handleHeaderObserver(headerId, inView) {
+    handleHeaderObserver = (headerId, inView) => {
         if (inView) this.setActiveHeaderId(headerId);
-    }
+    };
 
     render() {
         const data = this.props.data;
