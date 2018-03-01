@@ -84,7 +84,8 @@
 
 .about-left {
     grid-column: 1;
-    grid-row: 2 / 5;
+    grid-row-start: 2;
+    grid-row-end: 5;
 
     @include on-mq(medium) {
         text-align: center;
@@ -229,11 +230,11 @@
             font-family: inherit;
         }
     }
-    
+
     @include on-mq(large) {
         grid-column: 3 / 5;
     }
-    
+
     @include on-mq(medium) {
         grid-column: 1;
         grid-row: 3;
