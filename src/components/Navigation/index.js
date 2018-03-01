@@ -51,9 +51,11 @@ class Navigation extends Component {
         const navExpanded = this.state.navExpanded;
         return (
             <button id="mobile-toggle" className={`hamburger ${navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="input-fix" tabIndex="-1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </button>
         );
     }
