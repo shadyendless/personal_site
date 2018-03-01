@@ -9,10 +9,13 @@
     "gatsby-plugin-react-helmet": "^2.0.5",
     "gatsby-plugin-react-next": "^1.0.10",
     "gatsby-plugin-sass": "^1.0.18",
+    "gatsby-source-filesystem": "^1.5.25",
+    "gatsby-transformer-remark": "^1.7.34",
     "moment": "^2.20.1",
     "normalize.css": "^8.0.0",
     "react-body-classname": "^1.2.0",
     "react-helmet": "^5.2.0",
+    "react-intersection-observer": "^3.0.3",
     "zenscroll": "^4.0.2"
   },
   "keywords": [

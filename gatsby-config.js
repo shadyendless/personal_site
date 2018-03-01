@@ -1,6 +1,18 @@
 module.exports = {
     siteMetadata: {
-        title: 'Jacob Foster'
+        title: `Jacob Foster`
     },
-    plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-react-next', 'gatsby-plugin-sass']
+    plugins: [
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-react-next`,
+        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `src`,
+                path: `${__dirname}/src`
+            }
+        },
+        `gatsby-transformer-remark`
+    ]
 };
