@@ -1,8 +1,8 @@
 ---
+id: 5
+slug: "today"
 title: "Today"
 section: "About"
-id: "today"
-order: 5
 ---
 
 If you've read everything up to here then you'll notice that I haven't had any formal training in web development or design. This almost entirely underscores who I am and what I do—I am an autodidact trying to better myself so that I can help better those around me. I belive the ultimate reason that the web ended up grabbing my attention was because of the size of the audience and the impact of the platform.

@@ -1,8 +1,8 @@
 ---
-title: "Beginnings"
+id: 2
 section: "About"
-id: "beginnings"
-order: 2
+slug: "beginnings"
+title: "Beginnings"
 ---
 
 I've had a computer for as long as I can remember. My parents were both into technology, so as soon as it was possible to have a PC in the house they did. I remember watching my dad tweak with the computer (either upgrading the hardware or just general use) and playing with things like Kid Pix to try and create fun things. Kid Pix was quite limited back then, but with a kid's imagination you really could make whatever you wanted. While Kid Pix and Mavis Beacon were enjoyable, and kept me distracted for a long time, eventually I lost interest. It wasn't until I was introduced to video games that I really got excited about what worlds computers would let people escape to.

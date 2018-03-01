@@ -1,8 +1,8 @@
 ---
+id: 4
+slug: "college"
 title: "College"
 section: "About"
-id: "college"
-order: 4
 ---
 
 I went to the Oregon Institute of Technology after touring the campus and realizing that it was the best place for me. I wanted to be taught in a hands-on environment so that I would be able to immediately apply anything I had learned in class to the real-world, which they delivered in spades. Since I had already taught myself C++ (the language that OIT teaches), I decided that I would take this opportunity to dual-major in hardware engineering to learn more about what happens under the hood.

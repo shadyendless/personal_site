@@ -1,8 +1,8 @@
 ---
+id: 3
+slug: "webandcpp"
 title: "Web & C++"
 section: "About"
-id: "webandcpp"
-order: 3
 ---
 
 My parents and I have always played MMORPGs together, starting with _Ultima Online_ and playing everything through the _Final Fantasy XIV_. In 2002, while looking for our next world to immerse ourselves in, we came across _Final Fantasy XI_. There's not a concise way to explain the impact that _Final Fantasy XI_ had on my life, but if you'd like to talk more about it then I'd be more than willing. While playing _FFXI_ we formed a linkshell (you may be more familiar with the term guild or clan) and decided that we needed a website (this was the early 2000s, everyone had websites then). Nobody knew how to make anything and so I decided to step up and try. Enter Yahoo! GeoCities.

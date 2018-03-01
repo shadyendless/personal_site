@@ -1,3 +1,4 @@
+import zenscroll from 'zenscroll';
 import React, { Component } from 'react';
 import Observer from 'react-intersection-observer';
 import { isLandscape, isPortrait } from '../../utils';
@@ -15,6 +16,16 @@ class AboutLeft extends Component {
         };
 
         this.handleTocObserver = this.handleTocObserver.bind(this);
+        this.scrollTo = this.scrollTo.bind(this);
+    }
+
+    scrollTo(event) {
+        event.preventDefault();
+        const slug = event.target.dataset.scrollTo;
+        const headerId = event.target.dataset.headerId;
+
+        zenscroll.center(document.getElementById(slug), 999, isLandscape() ? 50 : 250);
+        this.props.setActiveHeaderId(+headerId);
     }
 
     handleTocObserver(inView) {
@@ -26,6 +37,7 @@ class AboutLeft extends Component {
     }
 
     render() {
+        const activeHeaderId = this.props.activeHeaderId;
         const edges = this.props.data.allMarkdownRemark.edges;
         const fixedTOC = this.state.fixedTOC;
 
@@ -39,10 +51,12 @@ class AboutLeft extends Component {
                     <div className="about-left__links">
                         {edges.map(edge => (
                             <a
-                                key={`${edge.node.frontmatter.id}-toc`}
-                                className={`about-left__link ${edge.node.frontmatter.order === 1 ? 'active' : ''}`}
+                                key={`${edge.node.frontmatter.slug}-toc`}
+                                className={`about-left__link ${edge.node.frontmatter.id === activeHeaderId ? 'active' : ''}`}
                                 href=""
-                                data-scroll-to={edge.node.frontmatter.id}
+                                data-scroll-to={edge.node.frontmatter.slug}
+                                data-header-id={edge.node.frontmatter.id}
+                                onClick={this.scrollTo}
                             >
                                 {edge.node.frontmatter.title}
                             </a>
