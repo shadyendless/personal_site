@@ -1,9 +1,12 @@
-.frontpage {
+.frontpage::before {
     background: url(../images/bg_mountain.svg);
-    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    position: fixed;
     background-position: center 60vh;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
 }
 
 .hero {

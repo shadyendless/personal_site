@@ -29,6 +29,7 @@
         font-size: 1.5em;
         font-weight: 800;
         letter-spacing: 1px;
+        text-shadow: 1px 1px 5px rgba(white, 0.25), 0px 0px 10px rgba(white, 0.5);
     }
 
     @include on-mq(medium) {
@@ -55,6 +56,10 @@
 }
 
 .about-left__toc {
+    background: white;
+    border-radius: 2px;
+    padding: 1em 0;
+
     @include on-mq-h(small) {
         flex: 1;
     }
