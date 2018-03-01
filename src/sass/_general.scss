@@ -4,12 +4,14 @@
 }
 
 html,
-body {
+body,
+#___gatsby {
     height: 100%;
     position: relative;
 }
 
-body, .smoothscroll {
+body,
+.smoothscroll {
     scroll-behavior: smooth;
 }
 
@@ -17,7 +19,7 @@ body {
     &.noscroll {
         overflow: hidden;
     }
-    
+
     &:before {
         background: linear-gradient(90deg, $light-blue, $dark-blue);
         display: block;
@@ -66,11 +68,11 @@ a {
     position: fixed;
     bottom: 1em;
     right: 1em;
-    
+
     @include on-mq(medium) {
         display: flex;
     }
-    
+
     @include on-mq-h(small) {
         display: flex;
     }
