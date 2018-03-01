@@ -78,19 +78,23 @@ button#mobile-toggle {
     border-radius: 2px;
     color: inherit;
     cursor: pointer;
+    display: none;
     font: inherit;
     height: 2em;
     padding: 0.5em 0;
     width: 3em;
+
+    @include on-mq(medium) {
+        display: initial;
+    }
 }
 
 .hamburger {
-    cursor: pointer;
     height: 16px;
 
     & > .input-fix {
         align-items: center;
-        display: none;
+        display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
@@ -100,16 +104,13 @@ button#mobile-toggle {
         &:focus {
             outline: none;
         }
-    }
 
-    @include on-mq(medium) {
-        & > .input-fix {
-            display: flex;
+        & > span {
+            background: $light;
+            height: 2px;
+            transition: all 0.25s;
+            width: 24px;
         }
-    }
-
-    & > .input-fix > span {
-        width: 24px;
     }
 
     &:hover {
@@ -118,22 +119,19 @@ button#mobile-toggle {
         }
     }
 
-    & > .input-fix > span {
-        background: $light;
-        height: 2px;
-
-        transition: all 0.25s;
-    }
-
     &.open {
-        & > .input-fix > span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        & > .input-fix > span:nth-child(2) {
-            transform: scaleX(0);
-        }
-        & > .input-fix > span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+        & > .input-fix {
+            & > span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            & > span:nth-child(2) {
+                transform: scaleX(0);
+            }
+
+            & > span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
         }
     }
 }
