@@ -3,5 +3,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
+import React from 'react';
 
- // You can delete this file if you're not using it
+exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
+    setPostBodyComponents([
+        <script key="polyfill-io" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&gated"></script>
+    ]);
+};
