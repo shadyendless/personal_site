@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "jacob-foster-personal-site",
+  "description": "Jacob Foster's personal website.",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jacob Foster <me@jacob-foster.com>",
   "dependencies": {
     "gatsby": "^1.9.218",
     "gatsby-link": "^1.6.37",

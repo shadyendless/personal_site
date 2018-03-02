@@ -35,17 +35,17 @@ class AboutLeft extends Component {
         const fixedTOC = this.state.fixedTOC;
 
         return (
-            <div className="about-left">
+            <div className="page-left">
                 <Observer onChange={this.handleTocObserver}>
-                    <img className="about-image" src={me} srcSet={`${me2x} 2x, ${me3x} 3x`} />
+                    <img className="author-image" src={me} srcSet={`${me2x} 2x, ${me3x} 3x`} />
                 </Observer>
-                <div className={`about-left__toc ${fixedTOC ? 'fixed' : ''}`}>
-                    <h1 className="about-left__header" />
-                    <div className="about-left__links">
+                <div className={`toc ${fixedTOC ? 'fixed' : ''}`}>
+                    <h1 className="toc__header" />
+                    <div className="toc__links">
                         {edges.map(edge => (
                             <a
                                 key={`${edge.node.frontmatter.slug}-toc`}
-                                className={`about-left__link ${edge.node.frontmatter.id === activeHeaderId ? 'active' : ''}`}
+                                className={`toc__link ${edge.node.frontmatter.id === activeHeaderId ? 'active' : ''}`}
                                 href=""
                                 data-scroll-to={edge.node.frontmatter.slug}
                                 data-header-id={edge.node.frontmatter.id}

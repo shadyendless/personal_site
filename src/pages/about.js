@@ -23,18 +23,18 @@ class AboutPage extends Component {
         const edges = this.props.data.allMarkdownRemark.edges;
 
         return (
-            <div className="aboutpage">
+            <div className="page">
                 <AboutLeft data={data} activeHeaderId={activeHeaderId} setActiveHeaderId={this.setActiveHeaderId} />
                 {edges.map(edge => (
                     <Fragment key={edge.node.frontmatter.slug}>
                         <Observer
-                            className="about-header"
+                            className="page-header"
                             rootMargin="0% 0% -60% 0%"
                             onChange={inView => this.handleHeaderObserver(edge.node.frontmatter.id, inView)}
                         >
                             <h1 id={edge.node.frontmatter.slug}>{edge.node.frontmatter.title}</h1>
                         </Observer>
-                        <div className="about-text" dangerouslySetInnerHTML={{ __html: edge.node.html }} />
+                        <div className="page-text" dangerouslySetInnerHTML={{ __html: edge.node.html }} />
                     </Fragment>
                 ))}
             </div>
