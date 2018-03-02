@@ -23,7 +23,7 @@
 
 .page-header {
     grid-column: 3;
-    margin-top: 1em;
+    margin: 1em 0 0 3em;
 
     & h1 {
         font-size: 1.5em;
@@ -36,7 +36,7 @@
         grid-column: 1;
         grid-row: 2;
 
-        margin-top: 0.5em;
+        margin: 0.5em 0 0 0;
         text-align: center;
     }
 
@@ -104,7 +104,7 @@
     }
 
     & p {
-        color: $light;
+        color: darken($light, 10%);
         font-family: $body-font;
         font-size: 1.15em;
         line-height: 1.5;
@@ -121,6 +121,10 @@
         & em,
         & strong {
             font-family: inherit;
+        }
+
+        @include on-mq(small) {
+            font-size: 1em;
         }
     }
 
