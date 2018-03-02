@@ -50,6 +50,7 @@ a {
 #to-top {
     @include raising-box;
     background: white;
+    border: none;
     border-radius: 2px;
     color: $light-blue;
     display: none;
