@@ -105,7 +105,8 @@
 
     & p {
         color: $light;
-        font-family: $montserrat;
+        font-family: $body-font;
+        font-size: 1.15em;
         line-height: 1.5;
 
         &:first-child {
