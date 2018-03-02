@@ -77,3 +77,17 @@ a {
     content: '';
     width: 100%;
 }
+
+.input-fix {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}

@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 import BodyClassName from 'react-body-classname';
+import ToTopButton from '../components/ToTopButton';
 
 import Navigation from '../components/Navigation';
 import '../sass/main.scss';
@@ -24,6 +25,7 @@ const TemplateWrapper = ({ children }) => (
                 <Navigation />
                 {children()}
             </div>
+            <ToTopButton />
         </Fragment>
     </BodyClassName>
 );

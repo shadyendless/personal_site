@@ -1,6 +1,6 @@
 import AboutLeft from '../components/AboutLeft';
-import React, { Component, Fragment } from 'react';
 import Observer from 'react-intersection-observer';
+import React, { Component, Fragment } from 'react';
 
 class AboutPage extends Component {
     state = {

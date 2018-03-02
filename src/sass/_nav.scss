@@ -93,18 +93,6 @@ button#mobile-toggle {
     height: 16px;
 
     & > .input-fix {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-        width: 100%;
-
-        &:active,
-        &:focus {
-            outline: none;
-        }
-
         & > span {
             background: $light;
             height: 2px;
