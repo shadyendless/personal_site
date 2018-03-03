@@ -41,7 +41,7 @@
 
         @include on-mq(medium) {
             display: block;
-            margin: 0 auto 1em auto;
+            margin: 0 auto;
             max-height: 0;
             overflow: hidden;
             padding: 0 0.25em;
