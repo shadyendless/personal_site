@@ -11,6 +11,10 @@ class TableOfContents extends Component {
         setActiveHeaderId: PropTypes.func.isRequired
     };
 
+    state = {
+        tocShown: false
+    };
+
     scrollTo = (event) => {
         event.preventDefault();
         const slug = event.target.dataset.scrollTo;
@@ -20,15 +24,27 @@ class TableOfContents extends Component {
         this.props.setActiveHeaderId(+headerId);
     };
 
+    toggleTOC = (event) => {
+        event.preventDefault();
+        this.setState((prevState, props) => ({
+            tocShown: !prevState.tocShown
+        }));
+    };
+
     render() {
-        const activeHeaderId = this.props.activeHeaderId;
-        const edges = this.props.edges;
-        const isFixed = this.props.isFixed;
+        const { activeHeaderId, edges, isFixed } = this.props;
+        const { tocShown } = this.state;
 
         return (
             <div className={`toc ${isFixed ? 'fixed' : ''}`}>
-                <h1 className="toc__header" />
-                <div className="toc__links">
+                <h1 className="toc__header">
+                    <button class="toc-toggler" onClick={this.toggleTOC}>
+                        <span className="input-fix" tabIndex="-1">
+                            {tocShown ? 'Hide' : 'Show'}
+                        </span>
+                    </button>
+                </h1>
+                <div className={`toc__links ${tocShown ? 'expanded' : ''}`}>
                     {edges.map(edge => (
                         <a
                             key={`${edge.node.frontmatter.slug}-toc`}
@@ -36,8 +52,7 @@ class TableOfContents extends Component {
                             href=""
                             data-scroll-to={edge.node.frontmatter.slug}
                             data-header-id={edge.node.frontmatter.id}
-                            onClick={this.scrollTo}
-                        >
+                            onClick={this.scrollTo}>
                             {edge.node.frontmatter.title}
                         </a>
                     ))}

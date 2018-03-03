@@ -2,7 +2,7 @@
     background: white;
     border-radius: 2px;
     padding: 1em 0;
-
+    
     @include on-mq-h(small) {
         flex: 1;
     }
@@ -36,13 +36,21 @@
     &__links {
         display: flex;
         flex-direction: column;
-
+        overflow-x: auto;
         padding-left: 2em;
 
         @include on-mq(medium) {
-            flex-direction: row;
-            justify-content: space-between;
+            display: block;
+            margin: 0 auto 1em auto;
+            max-height: 0;
+            overflow: hidden;
             padding: 0 0.25em;
+            width: 35%;
+            transition: all .25s;
+
+            &.expanded {
+                max-height: 500px;
+            }
         }
 
         @include on-mq-h(small) {
@@ -69,20 +77,9 @@
         }
 
         @include on-mq(medium) {
-            border-left: 0;
-            border-bottom: 3px solid rgba(255, 255, 255, 0);
-            flex: 1;
-            font-size: 0.75em;
-            padding-left: 0;
-            padding-bottom: 0.25em;
-            &:hover {
-                border-left: 0;
-                border-bottom: 3px solid $light;
-            }
-            &.active {
-                border-left: 0;
-                border-bottom: 3px solid $light-blue;
-            }
+            display: block;
+            font-size: 1em;
+            text-align: left;
         }
 
         @include on-mq-h(small) {
@@ -99,5 +96,22 @@
                 border-bottom: 3px solid $light-blue;
             }
         }
+    }
+}
+
+.toc-toggler {
+    background: none;
+    border: none;
+    color: $dark;
+    cursor: pointer;
+    display: none;
+    font-size: 0.8em;
+    font-weight: 800;
+    margin-left: 1em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-mq(medium) {
+        display: inline-block;
     }
 }
