@@ -1,6 +1,7 @@
 import zenscroll from 'zenscroll';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { isLandscape } from '../../utils'
 
 class TableOfContents extends Component {
     static propTypes = {
