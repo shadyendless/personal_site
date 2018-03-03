@@ -1,6 +1,7 @@
-import AboutLeft from '../components/AboutLeft';
+import AboutAboveTOC from '../components/AboutAboveTOC';
 import Observer from 'react-intersection-observer';
 import React, { Component, Fragment } from 'react';
+import LeftSection from '../components/LeftSection';
 
 class AboutPage extends Component {
     state = {
@@ -24,7 +25,12 @@ class AboutPage extends Component {
 
         return (
             <div className="page">
-                <AboutLeft data={data} activeHeaderId={activeHeaderId} setActiveHeaderId={this.setActiveHeaderId} />
+                <LeftSection
+                    data={data}
+                    activeHeaderId={activeHeaderId}
+                    setActiveHeaderId={this.setActiveHeaderId}>
+                    <AboutAboveTOC />
+                </LeftSection>
                 {edges.map(edge => (
                     <Fragment key={edge.node.frontmatter.slug}>
                         <Observer
