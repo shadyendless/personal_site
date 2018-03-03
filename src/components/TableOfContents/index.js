@@ -22,10 +22,10 @@ class TableOfContents extends Component {
 
         zenscroll.center(document.getElementById(slug), 999, isLandscape() ? 50 : 250);
         this.props.setActiveHeaderId(+headerId);
+        this.toggleTOC();
     };
 
-    toggleTOC = (event) => {
-        event.preventDefault();
+    toggleTOC = () => {
         this.setState((prevState, props) => ({
             tocShown: !prevState.tocShown
         }));
@@ -38,7 +38,7 @@ class TableOfContents extends Component {
         return (
             <div className={`toc ${isFixed ? 'fixed' : ''}`}>
                 <h1 className="toc__header">
-                    <button class="toc-toggler" onClick={this.toggleTOC}>
+                    <button class="toc-toggler" onClick={() => this.toggleTOC()}>
                         <span className="input-fix" tabIndex="-1">
                             {tocShown ? 'Hide' : 'Show'}
                         </span>
