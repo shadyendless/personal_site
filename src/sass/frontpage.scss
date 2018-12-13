@@ -1,9 +1,13 @@
-.frontpage {
+.frontpage::before {
     background: url(../images/bg_mountain.svg);
-    background-attachment: fixed;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: fixed;
     background-position: center 60vh;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
 }
 
 .hero {
@@ -94,7 +98,7 @@
 
     @include on-mq(medium) {
         & > a {
-            width: 50px;
+            width: 60px;
         }
 
         & i.fa-facebook-f {

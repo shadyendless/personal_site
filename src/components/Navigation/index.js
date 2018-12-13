@@ -11,24 +11,20 @@ const links = [
 ];
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navExpanded: false
-        };
+    state = {
+        navExpanded: false
+    };
 
-        this.toggleMenu = this.toggleMenu.bind(this);
-    }
-
-    toggleMenu() {
+    toggleMenu = () => {
         this.setState((prevState, props) => ({
             navExpanded: !prevState.navExpanded
         }));
-    }
+    };
 
     render() {
+        const navExpanded = this.state.navExpanded;
         return (
-            <BodyClassName className={this.state.navExpanded ? 'noscroll' : ''}>
+            <BodyClassName className={navExpanded ? 'noscroll' : ''}>
                 <nav className="nav">
                     <div className="is-flex justify-content-space-between align-items-center">
                         <div className="logo">
@@ -43,23 +39,39 @@ class Navigation extends Component {
                                 </li>
                             ))}
                         </ul>
-                        <div id="mobile-toggle" className={`hamburger ${this.state.navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
-                            <div />
-                            <div />
-                            <div />
-                        </div>
+                        {this.renderHamburger()}
                     </div>
-                    <ul className={`nav-items__mobile ${this.state.navExpanded ? '' : 'is-none'}`}>
-                        {links.map(({ url, link }) => (
-                            <li key={`${link}-mobile`} className="nav-item__mobile">
-                                <Link to={url} activeClassName="active">
-                                    {link}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    {this.renderMobileNav()}
                 </nav>
             </BodyClassName>
+        );
+    }
+
+    renderHamburger() {
+        const navExpanded = this.state.navExpanded;
+        return (
+            <button id="mobile-toggle" className={`hamburger ${navExpanded ? 'open' : ''}`} onClick={this.toggleMenu}>
+                <span className="input-fix" tabIndex="-1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        );
+    }
+
+    renderMobileNav() {
+        const navExpanded = this.state.navExpanded;
+        return (
+            <ul className={`nav-items__mobile ${navExpanded ? '' : 'is-none'}`}>
+                {links.map(({ url, link }) => (
+                    <li key={`${link}-mobile`} className="nav-item__mobile">
+                        <Link to={url} activeClassName="active" onClick={this.toggleMenu}>
+                            {link}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         );
     }
 }

@@ -72,43 +72,54 @@
     }
 }
 
-.hamburger {
+button#mobile-toggle {
+    background: none;
+    border: none;
+    border-radius: 2px;
+    color: inherit;
     cursor: pointer;
     display: none;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 1em;
-    width: 1.5em;
+    font: inherit;
+    height: 2em;
+    padding: 0.5em 0;
+    width: 3em;
 
     @include on-mq(medium) {
-        display: flex;
+        display: initial;
+    }
+}
+
+.hamburger {
+    height: 16px;
+
+    & > .input-fix {
+        & > span {
+            background: $light;
+            height: 2px;
+            transition: all 0.25s;
+            width: 24px;
+        }
     }
 
     &:hover {
-        & > div {
+        & > .input-fix > span {
             background: $dark;
         }
     }
 
-    & > div {
-        background: $light;
-
-        height: 2px;
-        width: 100%;
-
-        transition: all 0.25s;
-    }
-
     &.open {
-        & > div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        & > div:nth-child(2) {
-            transform: scaleX(0);
-        }
-        & > div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+        & > .input-fix {
+            & > span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            & > span:nth-child(2) {
+                transform: scaleX(0);
+            }
+
+            & > span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
         }
     }
 }
